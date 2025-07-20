@@ -1,5 +1,9 @@
 <?php 
     require_once 'header.php';
+    if(!empty($_SESSION['un'])){
+        header('Location: panel.php');
+        die; 
+    }
     $users = $db->fetchAll('SELECT * FROM userz');
     if(isset($_POST['username']) && isset($_POST['password']))
     {
@@ -8,7 +12,7 @@
                 if($user['username'] == $un && $user['password'] == md5($pw)){
                     $_SESSION['un'] = $un;
                     $_SESSION['pw'] = $pw;
-                    
+
                     header('Location: panel.php');
 
                     return 1;

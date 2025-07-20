@@ -5,7 +5,8 @@
     $db = NEW Database;
     $allproducts     = $db->fetchAll('SELECT * FROM products');
     $curent_user = array('id'=>'1','role'=>1);
-   
+    $sc = new shopconfig;
+    
     // print_r( $products);
 
 ?>
@@ -27,7 +28,7 @@
     <link rel="stylesheet" href="<?php echo PATH_CSS;?>login.css">
     <link rel="stylesheet" href="<?php echo PATH_CSS;?>panel.css">
     <link rel="wensite icon" type="png" href="<?php echo PATH_IMAGES;?>h1.jpg">
-    <title>home</title>
+    <title><?php echo $sc->site_name.$sc->seperator.$sc::$page_title?></title>
 </head>
 
 <body>

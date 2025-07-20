@@ -28,6 +28,10 @@
             // print_r($data);exit;
             $result = $db->insert('userz',$data);
             if($result != 1){
+
+                $_SESSION['un'] = $un;
+                $_SESSION['pw'] = $pw;
+
                 header('Location: panel.php');
                 return 1;
             }
