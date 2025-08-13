@@ -9,7 +9,7 @@
         </div>
         <div class="left">
             <a href=""><i class="fas fa-bell"></i></a>
-            <a href="index.php"><i class="fas fa-home"></i></a>
+            <a href="../index.php"><i class="fas fa-home"></i></a>
             <a href=""><i class="fas fa-cog"></i></a>
             <a href="<?php echo PATH_ROOT.'/'?>logout.php" onclick="event.preventDefault(); if(confirm('آیا می خواهید خارج شوید؟')){alert('به امید دیدار.');window.location.href = '../logout.php';}"><i class="fas fa-power-off"></i></a>
         </div>
