@@ -13,7 +13,7 @@
             // چک کردن اطلاعات
             if (username === correctUsername && password === correctPassword) {
                 // اگه درست بود، هدایت به صفحه اصلی
-                window.location.href = "panel.php";
+                window.location.href = "panel/panel.php";
             } else {
                 // اگه اشتباه بود، نمایش پیام خطا
                 document.getElementById('errorMessage').textContent = 'نام کاربری یا رمز عبور اشتباه است!'

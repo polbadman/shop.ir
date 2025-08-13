@@ -1,7 +1,7 @@
 <?php 
     require_once 'header.php';
     if(!empty($_SESSION['un'])){
-        header('Location: panel.php');
+        header('Location: panel/panel.php');
         die; 
     }
     $users = $db->fetchAll('SELECT * FROM userz');
@@ -13,7 +13,7 @@
                     $_SESSION['un'] = $un;
                     $_SESSION['pw'] = $pw;
 
-                    header('Location: panel.php');
+                    header('Location: panel/panel.php');
 
                     return 1;
                 }
