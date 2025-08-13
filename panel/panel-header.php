@@ -11,7 +11,7 @@
             <a href=""><i class="fas fa-bell"></i></a>
             <a href="../index.php"><i class="fas fa-home"></i></a>
             <a href=""><i class="fas fa-cog"></i></a>
-            <a href="<?php echo PATH_ROOT.'/'?>logout.php" onclick="event.preventDefault(); if(confirm('آیا می خواهید خارج شوید؟')){alert('به امید دیدار.');window.location.href = '../logout.php';}"><i class="fas fa-power-off"></i></a>
+            <a href="<?php echo PATH_FRONT.'/'?>logout.php" onclick="event.preventDefault(); if(confirm('آیا می خواهید خارج شوید؟')){alert('به امید دیدار.');window.location.href ='<?php echo SITE_URL.'/front/';?>logout.php';}"><i class="fas fa-power-off"></i></a>
         </div>
     </nav>
     <div class="header-message">

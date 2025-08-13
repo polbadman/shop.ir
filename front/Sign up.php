@@ -1,4 +1,5 @@
 <?php
+require '../config.php';
 require_once 'header.php';
 
 
@@ -31,7 +32,7 @@ if (isset($_POST['username']) && isset($_POST['password'])  && isset($_POST['ema
             $_SESSION['un'] = $un;
             $_SESSION['pw'] = $pw;
 
-            header('Location: panel/panel.php');
+            header('Location: '.PATH_PANEL.'/panel.php');
             return 1;
         }
         if ($result != 1) {
@@ -82,10 +83,10 @@ if (isset($_POST['username']) && isset($_POST['password'])  && isset($_POST['ema
             </div>
             <div class="col-lg-4">
                 <div class="login-img-container">
-                    <img src="./svg/login.svg" alt="">
+                    <img src="../svg/login.svg" alt="">
                 </div>
             </div>
         </div>
     </div>
 </main>
-<?php require_once PATH_ROOT . '/footer.php'; ?>
+<?php require_once PATH_FRONT . '/footer.php'; ?>

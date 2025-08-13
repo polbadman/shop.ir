@@ -11,7 +11,10 @@ define("PATH_JS", SITE_URL."/".'assets/js/');
 define("PATH_CSS", SITE_URL."/".'assets/css/');
 define("PATH_FONTS", SITE_URL."/".'assets/fonts/');
 define("PATH_PANEL", SITE_URL."/".'panel/');
+
 define("PATH_ROOT",__DIR__);
+define("PATH_FRONT", PATH_ROOT.'/front');
+
 
 class shopconfig{
     public $site_name='فروشگاه امیر مقتدر';

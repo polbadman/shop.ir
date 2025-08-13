@@ -3,7 +3,7 @@
       $sc = new shopconfig;
       $sc::$page_title = 'بخش  مدیریت سفارشات ';
       $sc::$page_code = 1;
-      require_once '../header.php';
+      require_once PATH_FRONT.'/header.php';
 
 ?>
     <div id="panel" class="panel">
@@ -84,4 +84,4 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.0/dist/Chart.min.js"></script>
     <script src="<?php echo PATH_JS;?>panel.js"></script>
   
-<?php require_once PATH_ROOT.'/footer.php';?>
+<?php require_once PATH_FRONT.'/footer.php';?>

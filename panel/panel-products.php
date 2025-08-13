@@ -3,7 +3,7 @@ require_once "../config.php";
 $sc = new shopconfig;
 $sc::$page_title = 'بخش مدیریت محصولات';
 $sc::$page_code = 5;
-require_once '../header.php';
+require_once PATH_FRONT.'/header.php';
 $products  = $db->fetchAll('SELECT * FROM products');
 $special   = $db->fetchAll('SELECT * FROM products WHERE sale_type = 1');
 $super     = $db->fetchAll('SELECT * FROM products WHERE sale_type = 2');
@@ -115,4 +115,4 @@ $cat       = $db->fetch('SELECT * FROM products WHERE sale_type = 2');
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.0/dist/Chart.min.js"></script>
 <script src="<?php echo PATH_JS; ?>panel.js"></script>
 
-<?php require_once PATH_ROOT . '/footer.php'; ?>
+<?php require_once PATH_FRONT . '/footer.php'; ?>

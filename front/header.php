@@ -1,5 +1,5 @@
 <?php 
-   require_once "config.php";
+  
    defined('ABSPATH') || die;
     session_start();
     $db = NEW Database;
