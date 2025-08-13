@@ -12,7 +12,7 @@
                 <div class="register-lognin-btn">
                     <a href="login.php"><i class="far fa-user"></i></a>
                     <?php if(!empty($_SESSION['un'])):?>
-                        <a href="panel.php"><?php echo 'سلام'. $_SESSION['un'] .'خوش آمدی.';?></a>
+                        <a href="panel/panel.php"><?php echo 'سلام'. $_SESSION['un'] .'خوش آمدی.';?></a>
                     <?php else:?>
                         <a href="login.php">ثبت نام / ورود</a>
                     <?php endif;?>
