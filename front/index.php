@@ -2,7 +2,8 @@
     $hh =new hook_handler;
     $hh->do_action('init_front');
     require_once PATH_PLUGINS.'hello_world.php';
-    $hh->execute_hooks();
+    require_once PATH_PLUGINS.'secend_plugin.php';
+    $hh->execute_actions();
 
 ?>
     <header>

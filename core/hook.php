@@ -28,31 +28,34 @@ class hook_handler
 {
 
     private  $hooks;
-    private  $actions;
+    private  $actions=[];
 
     public function do_action($hook_name)
     {
-      echo $hook_name;
+      // $this->execute_hooks($hook_name);
       // $this->hooks.=array('hook_name'=>$hook_name);
       // print_r($this->hooks);
     }
 
     public function add_action($hook_name,$callback,$priority=10)
     {
-      echo $callback;
-      $this->actions = $callback;
-      // $this->actions.=['hook_name'=>$hook_name,'action_name'=>$callback,'priority'=>$priority];
-      // print_r($this->actions);die;
+      
+      $action=['hook_name'=>$hook_name,'action_name'=>$callback,'priority'=>$priority];
+      array_push($this->actions,$action);
     }
 
-    public function execute_hooks(){
-      // foreach($this->hooks as $currnet_hook)
-      //   {
-      //     return $currnet_hook;
-      //   }
+    public function execute_hooks($action_name)
+    {
       // print_r($this->actions);die;
-      $action= $this->actions;
-      return $action();
+        return $action_name();
+    }
+
+    
+    public function execute_actions(){
+      foreach($this->actions as  $action )
+      {
+        $this->execute_hooks($action['action_name']);
+      }
     }
 }
 ?>
