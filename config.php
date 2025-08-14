@@ -15,9 +15,12 @@ define("PATH_PANEL", SITE_URL."/".'panel/');
 define("PATH_ROOT",__DIR__);
 define("PATH_FRONT", PATH_ROOT.'/front/');
 define("PATH_CORE", PATH_ROOT.'/core/');
+define("PATH_PLUGINS", PATH_ROOT.'/plugins/');
 
-//database handler
+//load core
+require_once(PATH_CORE.'hook.php');
 require_once(PATH_CORE.'db.php');
+
 
 class shopconfig{
     public $site_name='فروشگاه امیر مقتدر';

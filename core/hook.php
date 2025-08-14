@@ -1,17 +1,17 @@
 <?php
-function apply_operation($number, $operation) {
-  return $operation($number);
-}
+// function apply_operation($number, $operation) {
+//   return $operation($number);
+// }
 
-function square($num) {
-  return $num * $num;
-}
+// function square($num) {
+//   return $num * $num;
+// }
 
-$result = apply_operation(5, "square");
-echo $result; // خروجی: 25
+// $result = apply_operation(5, "square");
+// echo $result; // خروجی: 25
 
-$result = apply_operation(5, function($num) { return $num + 5; });
-echo $result; // خروجی: 10
+// $result = apply_operation(5, function($num) { return $num + 5; });
+// echo $result; // خروجی: 10
 
 
 /**?
@@ -24,4 +24,35 @@ echo $result; // خروجی: 10
     در داخل apply_operation، تابع square با استفاده از $operation($number) فراخوانی می‌شود و نتیجه به عنوان خروجی apply_operation برگردانده می‌شود.
     همچنین، می‌توانید یک تابع ناشناس (anonymous function) را نیز به عنوان پارامتر به apply_operation پاس دهید، مانند apply_operation(5, function($num) { return $num + 5; })
  */
+class hook_handler
+{
+
+    private  $hooks;
+    private  $actions;
+
+    public function do_action($hook_name)
+    {
+      echo $hook_name;
+      // $this->hooks.=array('hook_name'=>$hook_name);
+      // print_r($this->hooks);
+    }
+
+    public function add_action($hook_name,$callback,$priority=10)
+    {
+      echo $callback;
+      $this->actions = $callback;
+      // $this->actions.=['hook_name'=>$hook_name,'action_name'=>$callback,'priority'=>$priority];
+      // print_r($this->actions);die;
+    }
+
+    public function execute_hooks(){
+      // foreach($this->hooks as $currnet_hook)
+      //   {
+      //     return $currnet_hook;
+      //   }
+      // print_r($this->actions);die;
+      $action= $this->actions;
+      return $action();
+    }
+}
 ?>

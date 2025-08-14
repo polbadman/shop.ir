@@ -1,4 +1,10 @@
-<?php  require_once 'header.php';?>
+<?php  require_once 'header.php';
+    $hh =new hook_handler;
+    $hh->do_action('init_front');
+    require_once PATH_PLUGINS.'hello_world.php';
+    $hh->execute_hooks();
+
+?>
     <header>
         <nav>
             <div class="nav-right">
