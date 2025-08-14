@@ -83,7 +83,7 @@ if (isset($_POST['username']) && isset($_POST['password'])  && isset($_POST['ema
             </div>
             <div class="col-lg-4">
                 <div class="login-img-container">
-                    <img src="../svg/login.svg" alt="">
+                    <img src="<?php echo PATH_SVG?>login.svg" alt="">
                 </div>
             </div>
         </div>
