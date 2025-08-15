@@ -1,5 +1,6 @@
 <?php  require_once 'header.php';
-    $hh =new hook_handler;
+    $p  = new plugins_handler;
+    $hh = new hook_handler;
     $hh->do_action('init_front');
     // require_once PATH_PLUGINS.'hello_world.php';
     // require_once PATH_PLUGINS.'secend_plugin.php';
