@@ -18,6 +18,7 @@ define("PATH_CORE", PATH_ROOT.'/core/');
 define("PATH_PLUGINS", PATH_ROOT.'/plugins/');
 
 //load core
+require_once(PATH_CORE.'plugins.php');
 require_once(PATH_CORE.'hook.php');
 require_once(PATH_CORE.'db.php');
 
