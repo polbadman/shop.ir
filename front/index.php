@@ -1,9 +1,9 @@
 <?php  require_once 'header.php';
     $hh =new hook_handler;
     $hh->do_action('init_front');
-    require_once PATH_PLUGINS.'hello_world.php';
-    require_once PATH_PLUGINS.'secend_plugin.php';
-    $hh->execute_actions();
+    // require_once PATH_PLUGINS.'hello_world.php';
+    // require_once PATH_PLUGINS.'secend_plugin.php';
+    
 
 ?>
     <header>
@@ -31,6 +31,12 @@
         <?php require_once 'slider.php'?>
         </section>
     </header>
+        <?php
+            $hh->do_action('body_front');
+            // require_once PATH_PLUGINS.'body.php';
+            print_r($hh->hooks);
+            $hh->execute_actions();
+        ?>
     <main>
         <section class="product-sec-new" id="add-to-cart">
             <?php require_once 'special_products.php'?>
