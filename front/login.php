@@ -1,6 +1,8 @@
 <?php
 require_once '../config.php';
 require_once PATH_FRONT .'/header.php';
+
+
 if (!empty($_SESSION['un'])) {
     header('Location: panel/panel.php');
     die;
@@ -27,6 +29,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     }
 }
 
+    print_r( $hh::$events);
 ?>
 
 <main>
@@ -35,6 +38,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             <div class="col-lg-8">
                 <div class="login-box">
                     <form id="loginForm" method="post" action="login.php">
+                        <?php $hh->do_actions('init_login_login_form');?>
+                        
                         <div class="input-group">
                             <label for="username">نام کابری :</label>
                             <input type="text" id="username" name="username" placeholder="Username" required>
@@ -70,4 +75,5 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     </div>
 </main>
 <!-- <script src="<?php echo PATH_JS; ?>kl.js"></script> -->
-<?php require_once PATH_FRONT . '/footer.php'; ?>
+<?php $hh->do_actions('before_footer');?>
+<?php require_once PATH_FRONT . '/footer.php';?>

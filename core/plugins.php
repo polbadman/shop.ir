@@ -16,10 +16,15 @@ class plugins_handler
             }
         }
 
-        print_r($this->plugins); // نمایش آرایه
+        // print_r($this->plugins); // نمایش آرایه
 
 
 
+    }
+    public function load_plugins(){
+        foreach($this->plugins as $plugin){
+            require_once PATH_PLUGINS. $plugin;
+        }
     }
 }
 

@@ -18,8 +18,13 @@ define("PATH_CORE", PATH_ROOT.'/core/');
 define("PATH_PLUGINS", PATH_ROOT.'/plugins/');
 
 //load core
-require_once(PATH_CORE.'plugins.php');
 require_once(PATH_CORE.'hook.php');
+global $hh;
+$hh = new hook_handler;
+require_once(PATH_CORE.'plugins.php');
+$p = new plugins_handler;
+$p->load_plugins();
+
 require_once(PATH_CORE.'db.php');
 
 

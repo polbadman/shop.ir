@@ -1,37 +1,27 @@
 <?php
-
+/* https://virgool.io/@farhad.ashtari/how-to-implement-hookable-system-like-wordpress-m2ci53wgfnpk*/
 class hook_handler
 {
 
-    public  $hooks=[];
-    public  $actions=[];
-
-    public function do_action($hook_name)
-    {
-      $hook=['hook_name'=>$hook_name];
-      array_push($this->hooks,$hook);
-      // print_r($hook);
-    }
-
-    public function add_action($hook_name,$callback,$priority=10)
-    {
-      
-      $action=['hook_name'=>$hook_name,'action_name'=>$callback,'priority'=>$priority];
-      array_push($this->actions,$action);
-    }
-
-    public function execute_hooks($action_name)
-    {
-      // print_r($this->actions);die;
-        return $action_name();
-    }
-
-
-    public function execute_actions(){
-      foreach($this->actions as  $action )
-      {
-        $this->execute_hooks($action['action_name']);
+    public static  $events=[];
+   
+    public function add_action($tag_name,$value=null,$callback=null){
+      if($callback ==! null){
+        if($callback){
+          self::$events[$tag_name][] = $callback;
+        }else{
+          unset(self::$events[$tag_name]);
+        }
+        
       }
+    }
+    public function do_actions($tag_name,$value=null){
+        if(isset(self::$events[$tag_name])){
+          foreach(self::$events[$tag_name] as $function){
+            $value = call_user_func($function,$value);
+          }
+          return $value;
+        }
     }
 }
 ?>

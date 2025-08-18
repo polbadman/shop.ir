@@ -1,7 +1,7 @@
 <?php  require_once 'header.php';
-    $p  = new plugins_handler;
-    $hh = new hook_handler;
-    $hh->do_action('init_front');
+    
+    //do_action init_front
+    $hh->do_actions('init_front');
     // require_once PATH_PLUGINS.'hello_world.php';
     // require_once PATH_PLUGINS.'secend_plugin.php';
     
@@ -32,14 +32,9 @@
         <?php require_once 'slider.php'?>
         </section>
     </header>
-        <?php
-            $hh->do_action('body_front');
-            // require_once PATH_PLUGINS.'body.php';
-            print_r($hh->hooks);
-            $hh->execute_actions();
-        ?>
     <main>
         <section class="product-sec-new" id="add-to-cart">
+             <?php $hh->do_actions('before_special_products') ?>
             <?php require_once 'special_products.php'?>
         </section>
         <section class="supper-offer-section">
@@ -60,3 +55,4 @@
         </section>
     </main>
     <?php require_once 'footer.php';?>
+    
