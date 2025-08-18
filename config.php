@@ -19,7 +19,7 @@ define("PATH_PLUGINS", PATH_ROOT.'/plugins/');
 
 //load core
 require_once(PATH_CORE.'hook.php');
-global $hh;
+
 $hh = new hook_handler;
 require_once(PATH_CORE.'plugins.php');
 $p = new plugins_handler;
